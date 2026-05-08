@@ -31,6 +31,8 @@ apis:
       - Load Balancing
       - Network
     properties:
+      - url: openapi/microsoft-azure-load-balancer-openapi.yml
+        type: OpenAPI
       - type: Documentation
         url: https://learn.microsoft.com/en-us/azure/load-balancer/
       - type: APIReference
