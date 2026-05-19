@@ -1,0 +1,229 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Azure Load Balancer REST API — Load Balancers
+  description: 'Azure Load Balancer REST API — Load Balancers. 6 operations. Lead operation: Azure Load Balancer REST API
+    List by subscription. Self-contained Naftiko capability covering one Microsoft Azure Load Balancer business surface.'
+  tags:
+  - Microsoft Azure Load Balancer
+  - Load Balancers
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    MICROSOFT_AZURE_LOAD_BALANCER_API_KEY: MICROSOFT_AZURE_LOAD_BALANCER_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: microsoft-azure-load-balancer-load-balancers
+    baseUri: https://management.azure.com
+    description: Azure Load Balancer REST API — Load Balancers business capability. Self-contained, no shared references.
+    resources:
+    - name: subscriptions-subscriptionId-providers-Microsoft.Network-loadBalancers
+      path: /subscriptions/{subscriptionId}/providers/Microsoft.Network/loadBalancers
+      operations:
+      - name: listloadbalancersbysubscription
+        method: GET
+        description: Azure Load Balancer REST API List by subscription
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: subscriptions-subscriptionId-resourceGroups-resourceGroupName-providers-Microsof
+      path: /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/loadBalancers
+      operations:
+      - name: listloadbalancersbyresourcegroup
+        method: GET
+        description: Azure Load Balancer REST API List by resource group
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: subscriptions-subscriptionId-resourceGroups-resourceGroupName-providers-Microsof
+      path: /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/loadBalancers/{name}
+      operations:
+      - name: getloadbalancers
+        method: GET
+        description: Azure Load Balancer REST API Get resource
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+      - name: createorupdateloadbalancers
+        method: PUT
+        description: Azure Load Balancer REST API Create or update resource
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+      - name: updateloadbalancers
+        method: PATCH
+        description: Azure Load Balancer REST API Update resource
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+      - name: deleteloadbalancers
+        method: DELETE
+        description: Azure Load Balancer REST API Delete resource
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    authentication:
+      type: bearer
+      token: '{{env.MICROSOFT_AZURE_LOAD_BALANCER_API_KEY}}'
+  exposes:
+  - type: rest
+    namespace: microsoft-azure-load-balancer-load-balancers-rest
+    port: 8080
+    description: REST adapter for Azure Load Balancer REST API — Load Balancers. One Spectral-compliant resource per consumed
+      operation, prefixed with /v1.
+    resources:
+    - path: /v1/subscriptions/{subscriptionid}/providers/microsoft-network/loadbalancers
+      name: subscriptions-subscriptionid-providers-microsoft-network-loadbalancers
+      description: REST surface for subscriptions-subscriptionId-providers-Microsoft.Network-loadBalancers.
+      operations:
+      - method: GET
+        name: listloadbalancersbysubscription
+        description: Azure Load Balancer REST API List by subscription
+        call: microsoft-azure-load-balancer-load-balancers.listloadbalancersbysubscription
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/subscriptions/{subscriptionid}/resourcegroups/{resourcegroupname}/providers/microsoft-network/loadbalancers
+      name: subscriptions-subscriptionid-resourcegroups-resourcegroupname-providers-microsof
+      description: REST surface for subscriptions-subscriptionId-resourceGroups-resourceGroupName-providers-Microsof.
+      operations:
+      - method: GET
+        name: listloadbalancersbyresourcegroup
+        description: Azure Load Balancer REST API List by resource group
+        call: microsoft-azure-load-balancer-load-balancers.listloadbalancersbyresourcegroup
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/subscriptions/{subscriptionid}/resourcegroups/{resourcegroupname}/providers/microsoft-network/loadbalancers/{name}
+      name: subscriptions-subscriptionid-resourcegroups-resourcegroupname-providers-microsof
+      description: REST surface for subscriptions-subscriptionId-resourceGroups-resourceGroupName-providers-Microsof.
+      operations:
+      - method: GET
+        name: getloadbalancers
+        description: Azure Load Balancer REST API Get resource
+        call: microsoft-azure-load-balancer-load-balancers.getloadbalancers
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: PUT
+        name: createorupdateloadbalancers
+        description: Azure Load Balancer REST API Create or update resource
+        call: microsoft-azure-load-balancer-load-balancers.createorupdateloadbalancers
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: PATCH
+        name: updateloadbalancers
+        description: Azure Load Balancer REST API Update resource
+        call: microsoft-azure-load-balancer-load-balancers.updateloadbalancers
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: DELETE
+        name: deleteloadbalancers
+        description: Azure Load Balancer REST API Delete resource
+        call: microsoft-azure-load-balancer-load-balancers.deleteloadbalancers
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: microsoft-azure-load-balancer-load-balancers-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for Azure Load Balancer REST API — Load Balancers. One tool per consumed operation, routed inline
+      through this capability's consumes block.
+    tools:
+    - name: azure-load-balancer-rest-api
+      description: Azure Load Balancer REST API List by subscription
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: microsoft-azure-load-balancer-load-balancers.listloadbalancersbysubscription
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: azure-load-balancer-rest-api-2
+      description: Azure Load Balancer REST API List by resource group
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: microsoft-azure-load-balancer-load-balancers.listloadbalancersbyresourcegroup
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: azure-load-balancer-rest-api-3
+      description: Azure Load Balancer REST API Get resource
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: microsoft-azure-load-balancer-load-balancers.getloadbalancers
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: azure-load-balancer-rest-api-4
+      description: Azure Load Balancer REST API Create or update resource
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: true
+      call: microsoft-azure-load-balancer-load-balancers.createorupdateloadbalancers
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: azure-load-balancer-rest-api-5
+      description: Azure Load Balancer REST API Update resource
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: true
+      call: microsoft-azure-load-balancer-load-balancers.updateloadbalancers
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: azure-load-balancer-rest-api-6
+      description: Azure Load Balancer REST API Delete resource
+      hints:
+        readOnly: false
+        destructive: true
+        idempotent: true
+      call: microsoft-azure-load-balancer-load-balancers.deleteloadbalancers
+      outputParameters:
+      - type: object
+        mapping: $.
