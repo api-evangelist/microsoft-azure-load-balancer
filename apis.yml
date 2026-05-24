@@ -104,3 +104,5 @@ common:
       description: Integrate with VMSS for automatic scaling and load distribution.
     - name: Azure Monitor
       description: Monitor load balancer health, performance metrics, and diagnostic logs.
+  - type: LLMsTxt
+    url: https://portal.azure.com/llms.txt
