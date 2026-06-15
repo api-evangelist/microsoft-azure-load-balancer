@@ -5,8 +5,15 @@
       "source": "https://azure.microsoft.com/en-us/blog/feed/",
       "feed_url": "https://azure.microsoft.com/en-us/blog/feed/",
       "title": "",
-      "saved": 0,
+      "saved": 1,
       "method": "feed"
+    },
+    {
+      "source": "https://techcommunity.microsoft.com/tag/azure%20load%20balancer",
+      "feed_url": "https://techcommunity.microsoft.com/tag/azure%20load%20balancer",
+      "title": "",
+      "saved": 0,
+      "method": "none"
     },
     {
       "source": "https://status.azure.com/",
@@ -16,6 +23,6 @@
       "method": "discovered"
     }
   ],
-  "post_count": 25,
-  "fetched": "2026-06-01T23:35:02Z"
+  "post_count": 26,
+  "fetched": "2026-06-14T20:42:17Z"
 }
