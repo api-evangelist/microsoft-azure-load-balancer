@@ -41,10 +41,10 @@ apis:
         url: https://learn.microsoft.com/en-us/azure/load-balancer/quickstart-load-balancer-standard-public-portal
       - type: Pricing
         url: https://azure.microsoft.com/en-us/pricing/details/load-balancer/
-      - type: SDK
+      - type: SDKs
         url: https://learn.microsoft.com/en-us/python/api/overview/azure/network
         title: Python SDK
-      - type: SDK
+      - type: SDKs
         url: https://learn.microsoft.com/en-us/dotnet/api/overview/azure/resourcemanager.network-readme
         title: .NET SDK
     contact:
@@ -102,5 +102,5 @@ common:
         description: Integrate with VMSS for automatic scaling and load distribution.
       - name: Azure Monitor
         description: Monitor load balancer health, performance metrics, and diagnostic logs.
-  - type: LLMsTxt
+  - type: LlmsText
     url: https://portal.azure.com/llms.txt
