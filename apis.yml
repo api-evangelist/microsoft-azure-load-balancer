@@ -54,6 +54,8 @@ maintainers:
   - FN: Kin Lane
     email: kin@apievangelist.com
 common:
+  - type: AgenticAccess
+    url: agentic-access/microsoft-azure-load-balancer-agentic-access.yml
   - type: DomainSecurity
     url: security/microsoft-azure-load-balancer-domain-security.yml
   - type: Authentication
