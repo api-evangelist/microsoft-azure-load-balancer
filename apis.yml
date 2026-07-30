@@ -3,6 +3,19 @@ description: >-
   Azure Load Balancer is a high-performance, low-latency layer-4 load balancing service for distributing inbound and
   outbound network traffic across virtual machines and other Azure resources. It supports public and internal load
   balancers, health probes, NAT rules, and HA scenarios.
+accessModel:
+  pricing: freemium
+  onboarding: self-serve
+  trial: false
+  try_now: true
+  public: false
+  label: Freemium · Self-serve signup
+  confidence: high
+  source:
+  - plans
+  - authentication
+  generated: '2026-07-22'
+  method: derived
 image: https://azure.microsoft.com/svghandler/load-balancer/
 url: https://azure.microsoft.com/en-us/services/load-balancer/
 created: '2026-03-13'
@@ -15,41 +28,58 @@ tags:
   - Load Balancing
   - Network
 apis:
-  - name: Azure Load Balancer REST API
-    description: >-
-      Azure Load Balancer REST API provides management of layer-4 load balancers for distributing network traffic across
-      virtual machines. It supports configuring frontend IPs, backend pools, health probes, load balancing rules, and
-      inbound NAT rules.
-    image: https://azure.microsoft.com/svghandler/load-balancer/
-    humanURL: https://learn.microsoft.com/en-us/rest/api/load-balancer/
-    baseURL: https://management.azure.com
-    tags:
-      - High Availability
-      - Layer 4
-      - Load Balancing
-      - Network
-    properties:
-      - url: openapi/microsoft-azure-load-balancer-openapi.yml
-        type: OpenAPI
-      - type: Documentation
-        url: https://learn.microsoft.com/en-us/azure/load-balancer/
-      - type: APIReference
-        url: https://learn.microsoft.com/en-us/rest/api/load-balancer/
-      - type: Authentication
-        url: https://learn.microsoft.com/en-us/rest/api/azure/
-      - type: GettingStarted
-        url: https://learn.microsoft.com/en-us/azure/load-balancer/quickstart-load-balancer-standard-public-portal
-      - type: Pricing
-        url: https://azure.microsoft.com/en-us/pricing/details/load-balancer/
-      - type: SDKs
-        url: https://learn.microsoft.com/en-us/python/api/overview/azure/network
-        title: Python SDK
-      - type: SDKs
-        url: https://learn.microsoft.com/en-us/dotnet/api/overview/azure/resourcemanager.network-readme
-        title: .NET SDK
-    contact:
-      - type: Support
-        url: https://azure.microsoft.com/en-us/support/
+- aid: microsoft-azure-load-balancer:microsoft-azure-load-balancer-load-balancers-api
+  name: Azure Load Balancer Load Balancers API
+  description: Load Balancers operations
+  humanURL: https://learn.microsoft.com/en-us/rest/api/load-balancer/
+  baseURL: https://management.azure.com
+  tags:
+  - Load Balancers
+  properties:
+  - type: OpenAPI
+    url: openapi/microsoft-azure-load-balancer-load-balancers-api-openapi.yml
+  - type: Documentation
+    url: https://learn.microsoft.com/en-us/azure/load-balancer/
+  - type: APIReference
+    url: https://learn.microsoft.com/en-us/rest/api/load-balancer/
+  - type: Authentication
+    url: https://learn.microsoft.com/en-us/rest/api/azure/
+  - type: GettingStarted
+    url: >-
+      https://learn.microsoft.com/en-us/azure/load-balancer/quickstart-load-balancer-standard-public-portal
+  - type: Pricing
+    url: https://azure.microsoft.com/en-us/pricing/details/load-balancer/
+  - type: SDKs
+    url: https://learn.microsoft.com/en-us/python/api/overview/azure/network
+  - type: SDKs
+    url: >-
+      https://learn.microsoft.com/en-us/dotnet/api/overview/azure/resourcemanager.network-readme
+- aid: microsoft-azure-load-balancer:microsoft-azure-load-balancer-operations-api
+  name: Azure Load Balancer Operations API
+  description: Operations operations
+  humanURL: https://learn.microsoft.com/en-us/rest/api/load-balancer/
+  baseURL: https://management.azure.com
+  tags:
+  - Operations
+  properties:
+  - type: OpenAPI
+    url: openapi/microsoft-azure-load-balancer-operations-api-openapi.yml
+  - type: Documentation
+    url: https://learn.microsoft.com/en-us/azure/load-balancer/
+  - type: APIReference
+    url: https://learn.microsoft.com/en-us/rest/api/load-balancer/
+  - type: Authentication
+    url: https://learn.microsoft.com/en-us/rest/api/azure/
+  - type: GettingStarted
+    url: >-
+      https://learn.microsoft.com/en-us/azure/load-balancer/quickstart-load-balancer-standard-public-portal
+  - type: Pricing
+    url: https://azure.microsoft.com/en-us/pricing/details/load-balancer/
+  - type: SDKs
+    url: https://learn.microsoft.com/en-us/python/api/overview/azure/network
+  - type: SDKs
+    url: >-
+      https://learn.microsoft.com/en-us/dotnet/api/overview/azure/resourcemanager.network-readme
 maintainers:
   - FN: Kin Lane
     email: kin@apievangelist.com
