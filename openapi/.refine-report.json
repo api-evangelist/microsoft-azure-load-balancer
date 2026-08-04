@@ -1,0 +1,16 @@
+{
+  "provider": "microsoft-azure-load-balancer",
+  "sources": [
+    "microsoft-azure-load-balancer-load-balancers-api-openapi.yml",
+    "microsoft-azure-load-balancer-operations-api-openapi.yml"
+  ],
+  "outputs": [
+    "microsoft-azure-load-balancer-load-balancers-api-openapi.yml",
+    "microsoft-azure-load-balancer-operations-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}
