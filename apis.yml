@@ -20,7 +20,7 @@ image: https://azure.microsoft.com/svghandler/load-balancer/
 url: https://azure.microsoft.com/en-us/services/load-balancer/
 created: '2026-03-13'
 modified: '2026-05-19'
-specificationVersion: '0.18'
+specificationVersion: '0.23'
 tags:
   - Azure
   - High Availability
