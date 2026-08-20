@@ -34,6 +34,8 @@ apis:
   humanURL: https://learn.microsoft.com/en-us/rest/api/load-balancer/
   baseURL: https://management.azure.com
   tags:
+  - Load Balancer
+  tags_raw:
   - Load Balancers
   properties:
   - type: OpenAPI
@@ -59,7 +61,8 @@ apis:
   description: Operations operations
   humanURL: https://learn.microsoft.com/en-us/rest/api/load-balancer/
   baseURL: https://management.azure.com
-  tags:
+  tags: []
+  tags_raw:
   - Operations
   properties:
   - type: OpenAPI
