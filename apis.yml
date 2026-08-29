@@ -3,6 +3,18 @@ description: >-
   Azure Load Balancer is a high-performance, low-latency layer-4 load balancing service for distributing inbound and
   outbound network traffic across virtual machines and other Azure resources. It supports public and internal load
   balancers, health probes, NAT rules, and HA scenarios.
+deliveryModel:
+  model: saas
+  open_source: false
+  commercial: true
+  callable_host: true
+  label: Hosted service · you call their endpoint
+  confidence: high
+  source:
+  - openapi
+  - pricing
+  generated: '2026-08-28'
+  method: derived
 accessModel:
   pricing: freemium
   onboarding: self-serve
