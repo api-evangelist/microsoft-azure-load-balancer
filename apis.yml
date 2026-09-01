@@ -46,7 +46,7 @@ apis:
   humanURL: https://learn.microsoft.com/en-us/rest/api/load-balancer/
   baseURL: https://management.azure.com
   tags:
-  - Load Balancers
+  - Load Balancer
   tags_raw:
   - Load Balancers
   properties:
