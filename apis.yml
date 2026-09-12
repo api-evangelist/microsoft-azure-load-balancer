@@ -99,6 +99,8 @@ maintainers:
   - FN: Kin Lane
     email: kin@apievangelist.com
 common:
+  - type: Website
+    url: https://www.microsoft.com/
   - type: AgenticAccess
     url: agentic-access/microsoft-azure-load-balancer-agentic-access.yml
   - type: DomainSecurity
@@ -157,3 +159,5 @@ common:
         description: Monitor load balancer health, performance metrics, and diagnostic logs.
   - type: LlmsText
     url: https://portal.azure.com/llms.txt
+x-parent: microsoft-azure
+x-relationship: product
