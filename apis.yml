@@ -38,6 +38,12 @@ tags:
   - High Availability
   - Layer 4
   - Load Balancing
+  - Networks
+tags_raw:
+  - Azure
+  - High Availability
+  - Layer 4
+  - Load Balancing
   - Network
 apis:
 - aid: microsoft-azure-load-balancer:microsoft-azure-load-balancer-load-balancers-api
