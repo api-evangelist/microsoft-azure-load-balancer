@@ -1,6 +1,6 @@
 openapi: 3.2.0
 info:
-  title: Azure Load Balancer REST Load Balancers Operations API
+  title: Azure Load Balancer REST Operations API
   description: Azure Load Balancer distributes incoming network traffic across backend resources. The REST API manages load balancers, frontend IP configurations, backend pools, load balancing rules, and probes.
   version: '2024-01-01'
 servers:
@@ -37,6 +37,15 @@ paths:
                 $ref: '#/components/schemas/ErrorResponse'
 components:
   schemas:
+    OperationList:
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/Operation'
+        nextLink:
+          type: string
     ErrorResponse:
       type: object
       properties:
@@ -49,15 +58,6 @@ components:
               type: string
             target:
               type: string
-    OperationList:
-      type: object
-      properties:
-        value:
-          type: array
-          items:
-            $ref: '#/components/schemas/Operation'
-        nextLink:
-          type: string
     Operation:
       type: object
       properties:
